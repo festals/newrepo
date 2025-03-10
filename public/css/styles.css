@@ -6,10 +6,6 @@
 }
 
 :root{
-  --brown: #f2d2a9;
-  --blue:  #2671B1;
-  --light-blue: #568CA9;
-  --light-brown:  #f3e7d8;
 
   --heading: 'Oswald';
   --paragraph: 'Lato';
@@ -22,8 +18,9 @@ h1, h2, h3{
 }
 
 #top-header{
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .siteName a{
@@ -52,20 +49,22 @@ h1, h2, h3{
 
 /*nav*/
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  display: flex;
+  font-size: 1.5rem;
+  background-color: var(--dark-font);
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  padding-left: 0;
   background-color: #333;
 }
 
 nav li {
-  float: left;
-  display: block;
+  padding: .5rem;
   color: white;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
+  
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -75,7 +74,6 @@ nav li:hover {
 
 
 /* hero*/
-
 p, li{
   font-family: var(--paragraph);
 }
@@ -88,13 +86,21 @@ p, li{
   margin-bottom : 0.5rem;
   position : relative;
   width: 100%;
-  height: 300px;
+  height: auto;
+}
+
+.hero img{
+  width: 100%;
+  height: auto;
 }
 
 .overlay-text{
   background-color: rgba(155, 153, 153, 0.5);
   text-align: left;
-  padding: 0.2rem;
+  padding: 0.5rem;
+  top: -1%;
+  left: 2%;
+  width: 40%;
 }
 
 
@@ -135,4 +141,43 @@ p, li{
 .upgrades-grid a:hover {
   color:white;
   transform : scale(1.09);
+}
+
+
+footer{
+  padding: 20px;
+}
+
+@media screen and (min-width: 500px) {
+  html{
+    background-image: url(../images/site/small_check.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
+    background-position : center;  
+  }
+
+  body{
+    background-color: white;
+    max-width: 1080px;
+    margin: auto;
+    border: #2671B1 solid 7px;
+    border-radius: 15px;
+  }
+
+  .hero{
+    background-image : url(../images/vehicles/delorean.jpg);
+  }
+
+  .info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .reviews ul{
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
