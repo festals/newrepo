@@ -60,11 +60,13 @@ nav ul {
 }
 
 nav li {
-  padding: .5rem;
+  padding: .45rem;
+}
+
+nav a {
   color: white;
-  text-align: center;
-  /* padding: 14px 16px; */
-  
+  text-align: center;  
+  text-decoration: none;
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -143,6 +145,36 @@ p, li{
   transform : scale(1.09);
 }
 
+/*vehicules inventory view*/
+#inv-display{
+  list-style: none;
+  width:80%;
+  text-align: center;
+  margin: 2rem;
+}
+
+#inv-display li{
+  border: #333 3px solid;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+#inv-display a{
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color:#2671B1;
+  font-family: var(--heading);
+}
+
+#inv-display img{
+  width: 100%;
+  height: auto;
+}
+
+#inv-display span{
+  font-family: var(--heading);
+}
 
 footer{
   padding: 20px;
@@ -179,5 +211,11 @@ footer{
     height: 80%;
     flex-direction: column;
     justify-content: space-around;
+  }
+
+  #inv-display{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 10px;
   }
 }
