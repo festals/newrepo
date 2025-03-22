@@ -57,6 +57,25 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+/* **************************************
+* Build the detail view HTML
+* ************************************ */
+Util.buildDetailSection = async function(data){
+  let details = '<div id="details">'
+  details +='<img src="' + data[0].inv_image +'" alt="Image of '+ data[0].inv_make + ' ' +data[0].inv_model+' on CSE Motors"/>'
+  details +='<div class="info">'
+  details += '<h2>' +data[0].inv_make+ ' ' +data[0].inv_model+ ' '+ 'Details </h2>'
+  details += '<p>'
+  details += '<span> Price: $' + new Intl.NumberFormat('en-US').format(data[0].inv_price) + '</span>'
+  details += '<span> Color: ' +data[0].inv_color+ '</span>'
+  details += '<span> Mileage: '+ new Intl.NumberFormat('en-US').format(data[0].inv_miles) + '</span>'
+  details += '<span> Description: '+data[0].inv_description+'</span></p>'
+  details += '</div></div>'
+
+  return details
+}
+
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
@@ -64,4 +83,4 @@ Util.buildClassificationGrid = async function(data){
  **************************************** */
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
-module.exports = Util
+module.exports = Util;
