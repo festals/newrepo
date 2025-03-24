@@ -65,11 +65,10 @@ Util.buildDetailSection = async function(data){
   details +='<img src="' + data[0].inv_image +'" alt="Image of '+ data[0].inv_make + ' ' +data[0].inv_model+' on CSE Motors"/>'
   details +='<div class="info">'
   details += '<h2>' +data[0].inv_make+ ' ' +data[0].inv_model+ ' '+ 'Details </h2>'
-  details += '<p>'
-  details += '<span> Price: $' + new Intl.NumberFormat('en-US').format(data[0].inv_price) + '</span>'
-  details += '<span> Color: ' +data[0].inv_color+ '</span>'
-  details += '<span> Mileage: '+ new Intl.NumberFormat('en-US').format(data[0].inv_miles) + '</span>'
-  details += '<span> Description: '+data[0].inv_description+'</span></p>'
+  details += '<p><span> Price:</span> $' + new Intl.NumberFormat('en-US').format(data[0].inv_price) + '</p>'
+  details += '<p><span> Color:</span> ' +data[0].inv_color+ '</p>'
+  details += '<p><span> Mileage: </span> '+ new Intl.NumberFormat('en-US').format(data[0].inv_miles) + '</p>'
+  details += '<p><span> Description:</span> '+data[0].inv_description+'</p>'
   details += '</div></div>'
 
   return details

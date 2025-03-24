@@ -176,6 +176,23 @@ p, li{
   font-family: var(--heading);
 }
 
+/*details view*/
+
+#details img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#details h2 {
+  text-align: center;
+}
+
+#details span{
+  font-weight: bolder;
+  font-family: var(--paragraph);
+}
+
 footer{
   padding: 20px;
 }
@@ -217,5 +234,18 @@ footer{
     display: grid;
     grid-template-columns: 2fr 2fr;
     gap: 10px;
+  }
+
+  #details{
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    gap: 5px;
+    margin-top: 2rem;
+    align-items: center;
+  }
+
+  #details h2, #details p{
+    grid-column: 2/3;
+    text-align: left;
   }
 }
