@@ -193,6 +193,16 @@ p, li{
   font-family: var(--paragraph);
 }
 
+/*error message*/
+#message{
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('/public/images/site/traffic.jpg');
+  background-size: cover;
+  height: 50vh;
+  background-position-y: 40%;
+  text-align: center;
+
+}
+
 footer{
   padding: 20px;
 }
