@@ -230,8 +230,18 @@ input[type="email"], input[type="password"], input[type="text"]{
   font-family: var(--paragraph);
 }
 
+input:required:invalid, input:focus:invalid {
+  border-left: 5px solid red;
+}
+
+input:required:valid {
+  border-left: 5px solid green;
+
+}
+
 #login label, #register label{
   font-family: var(--paragraph);
+  color: white;
 }
 
 #login  button, #register button{
