@@ -6,7 +6,8 @@
 }
 
 :root{
-
+  --grey: #333;
+  --blue: #2671B1;
   --heading: 'Oswald';
   --paragraph: 'Lato';
 }
@@ -201,6 +202,52 @@ p, li{
   background-position-y: 40%;
   text-align: center;
 
+}
+
+/*account/login*/
+.log{
+  background-color: var(--blue);
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  margin: 10px auto;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0px;
+}
+
+#login{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#login  input[type="email"], input[type="password"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-family: var(--paragraph);
+}
+
+#login label{
+  font-family: var(--paragraph);
+}
+
+#login  button{
+  padding: 10px;
+  border: none;
+  background-color: var(--blue);
+  color: white;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--heading);
+}
+
+#login  button:hover {
+  background-color:var(--grey) ;
+  color: var(--blue);
 }
 
 footer{
