@@ -205,7 +205,7 @@ p, li{
 }
 
 /*account/login*/
-.log{
+.log, .registration{
   background-color: var(--blue);
   border-radius: 8px;
   padding: 20px;
@@ -216,13 +216,13 @@ p, li{
   margin-bottom: 0px;
 }
 
-#login{
+#login, #register{
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-#login  input[type="email"], input[type="password"] {
+input[type="email"], input[type="password"], input[type="text"]{
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -230,11 +230,11 @@ p, li{
   font-family: var(--paragraph);
 }
 
-#login label{
+#login label, #register label{
   font-family: var(--paragraph);
 }
 
-#login  button{
+#login  button, #register button{
   padding: 10px;
   border: none;
   background-color: var(--blue);
@@ -245,7 +245,7 @@ p, li{
   font-family: var(--heading);
 }
 
-#login  button:hover {
+#login  button:hover, #register button:hover {
   background-color:var(--grey) ;
   color: var(--blue);
 }
