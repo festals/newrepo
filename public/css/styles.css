@@ -129,7 +129,8 @@ p, li{
 }
 
 .upgrades-grid div{
-  border: #111 1px solid ;
+  border-radius: 5px;
+  box-shadow: var(--grey) 2px 2px 2px 2px;
   margin: 1rem;
   padding: 1rem;
   background-color: #2671B1;
@@ -260,6 +261,35 @@ input:required:valid {
   color: var(--blue);
 }
 
+#Sign-up a {
+  text-decoration: none;
+  color: khaki;
+  font-size: larger;
+  font-family: var(--paragraph);
+  position: relative;
+}
+
+#Sign-up {
+  color: white;
+  font-family: var(--paragraph);
+}
+ 
+#Sign-up a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: khaki;
+  transition: width 0.3s;
+}
+ 
+#Sign-up a:hover::before {
+  width: 100%;
+}
+
+/*footer*/
 footer{
   padding: 20px;
 }

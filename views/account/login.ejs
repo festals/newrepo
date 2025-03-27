@@ -11,9 +11,9 @@
 <%- messages() %>
 
 <div class="log">
-<form id="login">
+<form id="login" action="/account/login" method="post">
     <label for="account_email">Email:</label>
-    <input type="email" id="account_email" name="account_email" placeholder="Enter your email" required>
+    <input type="email" id="account_email" name="account_email" placeholder="Enter your email" required value="<%= locals.account_email %>">
     <label for="account_password">Password:</label>
     <input type="password" id="psw" name="account_password" title="the password must be:
     12 characters in length, minimum
@@ -26,6 +26,8 @@
 <p id="Sign-up">No account?<a href="/account/register"> Sign-up</a></p>
 </div>  
     
+
+
 
 
 
