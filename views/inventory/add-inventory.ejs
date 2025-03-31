@@ -11,11 +11,11 @@
 <div class="addinv">
     <form id="formInv" action="/inv/add-inventory" method="post">
         <label for="inv_make">Make: </label>
-        <input name="inv_make" type="text" required pattern="^[a-zA-Z0-9]+$" value="<%= locals.inv_make%>">
+        <input id="inv_make" name="inv_make" type="text" required pattern="^[a-zA-Z0-9]+$" value="<%= locals.inv_make%>">
         <label for="inv_model">Model: </label>
-        <input name="inv_model" type="text" required pattern="^[a-zA-Z0-9]+$" value="<%= locals.inv_model%>">
+        <input id="inv_model" name="inv_model" type="text" required pattern="^[a-zA-Z0-9]+$" value="<%= locals.inv_model%>">
         <label for="inv_year">Year: </label>
-        <input name="inv_year" type="text" required pattern="^\d{4}$" value="<%= locals.inv_year%>">
+        <input id="inv_year" name="inv_year" type="text" required pattern="^\d{4}$" value="<%= locals.inv_year%>">
         <label for="inv_description">Description: </label>
         <input name="inv_description" type="text" required value="<%= locals.inv_description%>">
         <label for="inv_image">Image URL: </label>

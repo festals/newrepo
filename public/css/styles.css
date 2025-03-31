@@ -223,7 +223,7 @@ p, li{
   gap: 10px;
 }
 
-input[type="email"], input[type="password"], input[type="text"], input[type="number"]{
+input[type="email"], input[type="password"], input[type="text"], input[type="number"], select{
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -263,7 +263,7 @@ button:hover {
 
 #Sign-up a {
   text-decoration: none;
-  color: rgb(246, 241, 202);
+  color:wheat;
   font-size: larger;
   font-family: var(--paragraph);
   position: relative;
@@ -281,12 +281,18 @@ button:hover {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: rgb(246, 241, 202);
+  background-color: white;
   transition: width 0.3s;
 }
  
 #Sign-up a:hover::before {
   width: 100%;
+}
+
+#managementLinks {
+  padding: 1rem;
+  margin: .5rem;
+  font-size: 1.2rem;
 }
 
 /*footer*/
