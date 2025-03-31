@@ -263,7 +263,7 @@ button:hover {
 
 #Sign-up a {
   text-decoration: none;
-  color: khaki;
+  color: rgb(246, 241, 202);
   font-size: larger;
   font-family: var(--paragraph);
   position: relative;
@@ -281,7 +281,7 @@ button:hover {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: khaki;
+  background-color: rgb(246, 241, 202);
   transition: width 0.3s;
 }
  
