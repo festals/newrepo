@@ -206,7 +206,7 @@ p, li{
 }
 
 /*account/login*/
-.log, .registration{
+.log, .registration, .addclassif, .addinv{
   background-color: var(--blue);
   border-radius: 8px;
   padding: 20px;
@@ -217,13 +217,13 @@ p, li{
   margin-bottom: 0px;
 }
 
-#login, #register{
+#login, #register, #classification, #formInv{
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-input[type="email"], input[type="password"], input[type="text"]{
+input[type="email"], input[type="password"], input[type="text"], input[type="number"]{
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -240,12 +240,12 @@ input:required:valid {
 
 }
 
-#login label, #register label{
+label{
   font-family: var(--paragraph);
   color: white;
 }
 
-#login  button, #register button{
+button{
   padding: 10px;
   border: none;
   background-color: var(--blue);
@@ -256,7 +256,7 @@ input:required:valid {
   font-family: var(--heading);
 }
 
-#login  button:hover, #register button:hover {
+button:hover {
   background-color:var(--grey) ;
   color: var(--blue);
 }
