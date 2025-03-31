@@ -1,14 +1,15 @@
 <!-- the content heading -->
 <% if (title) { %>
-    <h1><%= title %></h1>
-    <% } else {
-        res.redirect('/')
-    } %>
+<h1><%= title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
     
-    <%# messages() %> 
+<!-- message--> 
+<%- messages() %>
     
-    <!-- The details Display 
-    All the logic and building were done previously,
-    the view only displays the result.-->
-    <%- details %>
+<!-- The details Display 
+All the logic and building were done previously,
+the view only displays the result.-->
+<%- details %>
     
