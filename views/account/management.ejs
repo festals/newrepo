@@ -1,0 +1,13 @@
+<!-- the content heading -->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+        res.redirect('/')
+    } %>
+    
+<!-- flash message-->
+<%- messages() %>
+
+<h2>Congrats! You're succesfully logged in</h2>
+
+
