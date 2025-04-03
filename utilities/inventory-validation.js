@@ -3,6 +3,7 @@ const {body, validationResult} = require('express-validator')
 const inventoryModel = require('../models/inventory-model')
 const validate = {}
 
+// validation rules
 validate.classificationRules = () => {
     return [
         //classifcation_name required, must be a string, no spaces or special characters, cannot exist
@@ -60,6 +61,7 @@ validate.invRules = () => {
     ]
 }
 
+//check classification rules before adding
 validate.checkClassData = async(req, res, next) => {
     const {classification_name} = req.body
     let errors = []
@@ -76,6 +78,7 @@ validate.checkClassData = async(req, res, next) => {
     }
 }
 
+//check inventory rules before adding
 validate.checkInvData = async(req, res) => {
     const {inv_make,
         inv_model, 
@@ -110,6 +113,49 @@ validate.checkInvData = async(req, res) => {
         })
         return
     }
+}
+
+//check inventory rules before editing
+// if error go back to the edit view
+validate.checkUpdateData = async(req, res, next) => {
+    const {
+        inv_id,
+        inv_make,
+        inv_model, 
+        inv_year, 
+        inv_description, 
+        inv_image, 
+        inv_thumbnail, 
+        inv_price, 
+        inv_miles, 
+        inv_color,
+        classification_id} = req.body
+    let errors = []
+    errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        let nav = await utilities.getNav()
+        let classificationList = await utilities.buildClassificationList()
+        let vehicleName = `${inv_make} ${inv_model}`
+        res.render("inventory/edit-inventory", {
+            errors,
+            title:"Edit" + vehicleName,
+            nav,
+            classificationList,
+            inv_id,
+            inv_make,
+            inv_model, 
+            inv_year, 
+            inv_description, 
+            inv_image, 
+            inv_thumbnail, 
+            inv_price, 
+            inv_miles, 
+            inv_color,
+            classification_id,
+        })
+        return
+    }
+    next()
 }
 
 module.exports = validate

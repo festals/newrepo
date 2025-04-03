@@ -39,6 +39,7 @@ router.get("/edit/:inventory_id", utilities.handleErrors(invController.buildEdit
 router.post(
     "/update",
     validate.invRules(),
+    validate.checkUpdateData,
     utilities.handleErrors(invController.updateInventory)
 )
 

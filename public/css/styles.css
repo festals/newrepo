@@ -217,7 +217,7 @@ p, li{
   margin-bottom: 0px;
 }
 
-#login, #register, #classification, #formInv{
+#login, #register, #classification, #formInv, #updateForm{
   display: flex;
   flex-direction: column;
   gap: 10px;
