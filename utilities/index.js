@@ -132,6 +132,19 @@ Util.checkLogin = (req, res, next) => {
 }
 
 /* ****************************************
+ *  Check Account Type
+ * ************************************ */
+Util.checkAccountType = (req, res, next) => {
+  if (res.locals.accountData.account_type === 'Admin' || res.locals.accountData.account_type === 'Employee'){
+    next()
+  } else {
+    req.flash("notice", "Please log in as an Employee or Admin.")
+    return res.redirect("/account/login")
+  }
+}
+
+
+/* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
  * General Error Handling

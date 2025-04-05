@@ -295,6 +295,43 @@ button:hover {
   font-size: 1.2rem;
 }
 
+.requirement{
+  color:white;
+}
+
+/*logged in*/
+.accInfo{
+  font-family: var(--paragraph);
+}
+
+a {
+  font-family:var(--paragraph) ;
+}
+
+#accountInfo a, .managementLinks a {
+  margin:1rem;
+  text-decoration: none;
+  color:var(--blue);
+  font-size: larger;
+  position: relative;
+}
+ 
+#accountInfo a::before, .managementLinks a::before  {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--blue);
+  transition: width 0.3s;
+}
+ 
+#accountInfo a:hover::before, .managementLinks a:hover::before {
+  width: 100%;
+}
+
+
 /*footer*/
 footer{
   padding: 20px;

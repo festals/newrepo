@@ -8,6 +8,32 @@
 <!-- flash message-->
 <%- messages() %>
 
-<h2>Congrats! You're succesfully logged in</h2>
+<div id="accountInfo">
+    <h2 class="greeting"> Welcome <%- locals.accountData.account_firstname %></h2>
+    <ul class="accInfo">
+        <li><strong>Firstname:</strong> <%- locals.accountData.account_firstname %></li>
+        <li><strong>Lastname:</strong> <%- locals.accountData.account_lastname  %></li>
+        <li><strong>Email:</strong> <%- locals.accountData.account_email %></li>
+        <li><strong>Type:</strong> <%- locals.accountData.account_type %></li>
+    </ul>
+    <a href="/account/update">Update Account Information</a>
+</div>
+
+<% if (locals.accountData.account_type === 'Admin' 
+|| locals.accountData.account_type === 'Employee') { %>
+    <div class="managementLinks">
+        <h3>Inventory Management</h3>
+        <a href="/inv/management">Click Here</a>
+    </div>
+<% } %>
+
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+
 
 
