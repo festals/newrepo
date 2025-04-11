@@ -1,5 +1,7 @@
 const invModel = require("../models/inventory-model")
+const invComm = require("../models/comment-model")
 const utilities = require("../utilities/")
+
 
 const invCont = {}
 
@@ -37,6 +39,31 @@ invCont.getInventoryDetail= async function (req, res, next) {
     errors: null
   })
 }
+
+/* ***************************
+ *  Add new comment
+ * ************************** */
+invCont.addComment = async function(req, res, next) {
+  // const first_name = req.body.first_name
+  const regResult = await invComm.addComment()
+  let nav = await utilities.getNav()
+
+  if (regResult) {
+    req.flash("notice", `Congratulations, you've add a comment.`)  //${first_name}
+    res.status(201).render("./inventory/detail", {
+        title: "Add Comment",
+        nav,
+    }) 
+  }else {
+    req.flash("notice", "Sorry, we were unable to add the comment.")
+    res.status(501).render("./inventory/detail", {
+        title: "Add Comment",
+        nav,
+        errors: null
+    })
+  }
+}
+
 
 /* ***************************
  *  Build management view

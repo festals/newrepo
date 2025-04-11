@@ -12,4 +12,28 @@
 All the logic and building were done previously,
 the view only displays the result.-->
 <%- details %>
-    
+
+<h2>Customer Reviews</h2>
+
+    <div class="addinv">
+    <form id="formInv" method="post">  <!--action="/inv/detail/#1" -->
+        <label for="comment_name">Screen Name: </label>
+        <input id="comment_name" name="comment_name" type="text" required >
+        <label for="comment_description">Review: </label>
+        <input id="comment_description" name="comment_description" type="text" required >
+        <p>Date: <span id="comment_date"></span></p>
+        <button type="submit" class="formButton">Submit a Review</button>
+    </form>
+    </div>
+
+
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+<% } %>
+
+<script src="../../js/comment-date.js"></script>
+

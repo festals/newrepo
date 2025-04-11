@@ -1,0 +1,36 @@
+<!-- the content heading -->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+        res.redirect('/')
+    } %>
+    
+<!-- message--> 
+<%- messages() %>
+
+<div class="addinv">
+
+    <form id="updateForm" action="/comm/update" method="post">
+
+        <label for="comment_name">Screen Name: </label>
+        <input id="comment_name" name="comment_name" type="text" required value="<%= locals.comment_name%>">
+        <label for="comment_description">Review: </label>
+        <input id="comment_description" name="comment_description" type="text" required value="<%= locals.comment_description%>">
+        <p>Date: <span id="comment_date"></span></p>
+        <button type="submit" class="formButton" disabled>Update Vehicle</button>    
+        <input type="hidden" name="inv_id"
+        <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+        <% } %>>
+    </form>
+</div>
+
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+   <%  }) %>
+   </ul>
+<% } %>
+
+<script src="/js/inv-update.js"></script>
+<script src="/js/comment-date.js"></script>

@@ -8,7 +8,17 @@ const validate = require("../utilities/inventory-validation")
 // Route to build inventory by classification view
 router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId));
 // Route to build details by inventory view
-router.get("/detail/:inventoryId", utilities.handleErrors(invController.getInventoryDetail));
+router.get("/detail/:inventoryId",
+    utilities.checkLogin, 
+    utilities.handleErrors(invController.getInventoryDetail)
+)
+router.post(
+    "/detail/:inventoryId",
+    utilities.checkLogin,
+    utilities.handleErrors(invController.addComment)
+)
+
+
 // Route to build management form by inventory view
 router.get(
     "/management", 
@@ -44,7 +54,8 @@ router.post(
 router.get("/add-inventory",
     utilities.checkLogin,
     utilities.checkAccountType,
-    utilities.handleErrors(invController.buildAddInventoryView))
+    utilities.handleErrors(invController.buildAddInventoryView)
+)
 
 router.post(
     "/add-inventory",
@@ -59,7 +70,8 @@ router.post(
 router.get("/edit/:inventory_id",
     utilities.checkLogin,
     utilities.checkAccountType,
-    utilities.handleErrors(invController.buildEditInventoryView))
+    utilities.handleErrors(invController.buildEditInventoryView)
+)
 
 router.post(
     "/update",
@@ -74,7 +86,8 @@ router.post(
 router.get("/delete/:inventory_id",  
     utilities.checkLogin,
     utilities.checkAccountType,
-    utilities.handleErrors(invController.buildDeleteInventoryView))
+    utilities.handleErrors(invController.buildDeleteInventoryView)
+)
 
 router. post(
     "/delete",
